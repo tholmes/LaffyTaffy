@@ -1,0 +1,103 @@
+.monitor-body {
+  position: absolute;
+  top: @navbar-height + @navbar-margin-bottom;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@lg-hdr: 65px;
+@md-hdr: 50px;
+@sm-hdr: 40px;
+@xs-hdr: 25px;
+.generate-fill-heights(lg, @lg-hdr);
+.generate-fill-heights(md, @md-hdr);
+.generate-fill-heights(sm, @sm-hdr);
+.generate-fill-heights(xs, @xs-hdr);
+
+.fill-height-abs {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.fill-height {
+  .fill-height-abs;
+  overflow: hidden;
+}
+
+.fill-height-scroll {
+  .fill-height-abs;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.fill-height-pills {
+  .fill-height-abs;
+  left: 150px;
+}
+
+.generate-fill-heights(@s, @v) {
+  .fill-header-@{s} {
+    .fill-height-abs;
+    height: @v;
+  }
+  .fill-body-@{s} {
+    .fill-height-abs;
+    top: @v;
+    height: auto;
+  }
+}
+
+@padding-xs: 2px;
+@padding-sm: 4px;
+@padding-md: 8px;
+@padding-lg: 15px; /* 15px to match with bootstrap default padding. */
+
+.padding-none {
+  padding: 0 !important; 
+}
+.margin-none {
+  margin: 0 !important;
+}
+
+.generate-paddings(lg, @padding-lg);
+.generate-paddings(md, @padding-md);
+.generate-paddings(sm, @padding-sm);
+.generate-paddings(xs, @padding-xs);
+
+
+.generate-paddings(@s, @v) {
+  .padding-@{s} {
+    padding: @v !important;
+  }
+  .padding-left-@{s} {
+    padding-left: @v !important;
+  }
+  .padding-right-@{s} {
+    padding-right: @v !important;
+  }
+  .padding-top-@{s} {
+    padding-top: @v !important;
+  }
+  .padding-bottom-@{s} {
+    padding-bottom: @v !important;
+  }
+  .margin-@{s} {
+    margin: @v !important;
+  }
+  .margin-left-@{s} {
+    margin-left: @v !important;
+  }
+  .margin-right-@{s} {
+    margin-right: @v !important;
+  }
+  .margin-top-@{s} {
+    margin-top: @v !important;
+  }
+  .margin-bottom-@{s} {
+    margin-bottom: @v !important;
+  }
+}
