@@ -1,0 +1,91 @@
+@lightFile: "Light";
+@regularFile: "Regular";
+@boldFile: "Bold";
+@italicFile: "Italic";
+@fontsDir: "/fonts/";
+@sourceSansProFamName: "Source Sans Pro";
+@sourceSansProFileName: "SourceSansPro";
+@openSansFamName: "Open Sans";
+@openSansFileName: "OpenSans";
+@robotoName: "Roboto";
+@latoName: "Lato";
+
+.font-face (@fontFamilyName; @fontStyle; @fontWeight; @fontUrl) {
+  font-family: @fontFamilyName;
+  font-style: @fontStyle;
+  font-weight: @fontWeight;
+  src: url(@fontUrl) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+//normal mixins
+.font-face-light(@fontFamilyName; @fontFileName) {
+  .font-face(@fontFamilyName; normal; 300; "@{fontsDir}@{fontFileName}-@{lightFile}.ttf");
+}
+.font-face-regular(@fontFamilyName; @fontFileName) {
+  .font-face(@fontFamilyName; normal; 400; "@{fontsDir}@{fontFileName}-@{regularFile}.ttf");
+}
+.font-face-bold(@fontFamilyName; @fontFileName) {
+  .font-face(@fontFamilyName; normal; 700; "@{fontsDir}@{fontFileName}-@{boldFile}.ttf");
+}
+
+//italic mixins
+.font-face-light-italic(@fontFamilyName; @fontFileName) {
+  .font-face(@fontFamilyName; italic; 300; "@{fontsDir}@{fontFileName}-@{lightFile}@{italicFile}.ttf");
+}
+.font-face-regular-italic(@fontFamilyName; @fontFileName) {
+  .font-face(@fontFamilyName; italic; 400; "@{fontsDir}@{fontFileName}-@{italicFile}.ttf");
+}
+.font-face-bold-italic(@fontFamilyName; @fontFileName) {
+  .font-face(@fontFamilyName; italic; 700; "@{fontsDir}@{fontFileName}-@{boldFile}@{italicFile}.ttf");
+}
+
+//Source Sans Pro Fonts
+@font-face {
+  .font-face-light(@sourceSansProFamName; @sourceSansProFileName);
+}
+@font-face {
+  .font-face-regular(@sourceSansProFamName; @sourceSansProFileName);
+}
+@font-face {
+  .font-face-bold(@sourceSansProFamName; @sourceSansProFileName);
+}
+
+//Roboto Fonts
+@font-face {
+  .font-face-regular(@robotoName; @robotoName);
+}
+@font-face {
+  .font-face-bold(@robotoName; @robotoName);
+}
+
+//Lato Fonts
+@font-face {
+  .font-face-regular(@latoName; @latoName);
+}
+@font-face {
+  .font-face-regular-italic(@latoName; @latoName);
+}
+@font-face {
+  .font-face-bold(@latoName; @latoName);
+}
+
+//Open Sans Fonts: 
+@font-face {
+  .font-face-light(@openSansFamName; @openSansFileName);
+}
+@font-face {
+  .font-face-regular(@openSansFamName; @openSansFileName);
+}
+@font-face {
+  .font-face-bold(@openSansFamName; @openSansFileName);
+}
+@font-face {
+  .font-face-light-italic(@openSansFamName; @openSansFileName);
+}
+@font-face {
+  .font-face-regular-italic(@openSansFamName; @openSansFileName);
+}
+@font-face {
+  .font-face-bold-italic(@openSansFamName; @openSansFileName);
+}
